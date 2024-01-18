@@ -88,4 +88,11 @@ public class RectangleService implements IRectangleService {
 
         return partialAdjacencySubLineCounter == 1;
     }
+
+    @Override
+    public boolean hasAdjacency(Rectangle rectangle1, Rectangle rectangle2) {
+        return isAdjacencySubLine(rectangle1, rectangle2)
+                || isAdjacencyProper(rectangle1, rectangle2)
+                || isPartialAdjacency(rectangle1, rectangle2);
+    }
 }

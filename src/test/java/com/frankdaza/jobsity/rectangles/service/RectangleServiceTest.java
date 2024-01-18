@@ -116,4 +116,28 @@ public class RectangleServiceTest {
         Rectangle rectangle2 = new Rectangle(new Point(2, 6), new Point(8, 4));
         Assertions.assertTrue(rectangleService.isPartialAdjacency(rectangle1, rectangle2));
     }
+
+    @DisplayName("should create two rectangles with adjacency - case 1")
+    @Test
+    public void hasAdjacencyIsTrueCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(-3, 4), new Point(4, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(2, 6), new Point(8, 4));
+        Assertions.assertTrue(rectangleService.hasAdjacency(rectangle1, rectangle2));
+    }
+
+    @DisplayName("should create two rectangles with adjacency - case 2")
+    @Test
+    public void hasAdjacencyIsTrueCase2() {
+        Rectangle rectangle1 = new Rectangle(new Point(1, 6), new Point(4, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(4, 8), new Point(7, 4));
+        Assertions.assertTrue(rectangleService.hasAdjacency(rectangle2, rectangle1));
+    }
+
+    @DisplayName("should create two rectangles with no adjacency - case 1")
+    @Test
+    public void hasAdjacencyIsFalseCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(1, 6), new Point(5, 2));
+        Rectangle rectangle2 = new Rectangle(new Point(6, 5), new Point(10, 3));
+        Assertions.assertFalse(rectangleService.hasAdjacency(rectangle1, rectangle2));
+    }
 }

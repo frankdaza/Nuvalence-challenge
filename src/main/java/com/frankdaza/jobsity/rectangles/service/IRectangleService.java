@@ -44,4 +44,12 @@ public interface IRectangleService {
      * @return true if the rectangles are adjacent with one partial sub-line, false otherwise.
      */
     boolean isPartialAdjacency(Rectangle rectangle1, Rectangle rectangle2);
+
+    /**
+     * Verify if two rectangles are adjacent.
+     * @param rectangle1 Rectangle 1
+     * @param rectangle2 Rectangle 2
+     * @return true if the rectangles are adjacent, false otherwise.
+     */
+    boolean hasAdjacency(Rectangle rectangle1, Rectangle rectangle2);
 }
