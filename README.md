@@ -7,12 +7,17 @@
 
 # Run the project
 
-- This is a spring boot project, so you can run it as a spring boot application.
+- This is a spring boot project, so you can run it as a spring boot application with the gradle command: 
+
+```bash
+./gradlew bootRun
+```
+
 - When the application is running, you should see a Jframe Panel with the rectangles, like this:
 
 ![rectangles](src/main/resources/images/rectangles.png)
 
-- All the Rectangle logic is in the class `RectanglesService.java` in the package `com.rectangles.rectangles.services`.
+- All the Rectangle logic is in the class `RectangleService.java` in the package `com.frankdaza.nuvalence.rectangle.service`.
 - You can run the tests with the command `./gradlew test` in the root of the project.
 
 ## Problem Description:
