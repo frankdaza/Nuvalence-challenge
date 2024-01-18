@@ -1,8 +1,8 @@
-package com.frankdaza.jobsity.rectangles.service;
+package com.frankdaza.nuvalence.rectangles.service;
 
-import com.frankdaza.jobsity.rectangles.domain.Line;
-import com.frankdaza.jobsity.rectangles.domain.Rectangle;
-import com.frankdaza.jobsity.rectangles.utils.Utilities;
+import com.frankdaza.nuvalence.rectangles.domain.Line;
+import com.frankdaza.nuvalence.rectangles.domain.Rectangle;
+import com.frankdaza.nuvalence.rectangles.utils.Utilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

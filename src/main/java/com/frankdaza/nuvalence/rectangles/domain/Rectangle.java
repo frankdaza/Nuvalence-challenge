@@ -1,4 +1,4 @@
-package com.frankdaza.jobsity.rectangles.domain;
+package com.frankdaza.nuvalence.rectangles.domain;
 
 import java.util.Objects;
 

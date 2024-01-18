@@ -1,6 +1,6 @@
-package com.frankdaza.jobsity.rectangles.service;
+package com.frankdaza.nuvalence.rectangles.service;
 
-import com.frankdaza.jobsity.rectangles.domain.Line;
+import com.frankdaza.nuvalence.rectangles.domain.Line;
 
 public interface ILineService {
 

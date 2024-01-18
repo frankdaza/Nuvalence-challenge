@@ -1,8 +1,8 @@
-package com.frankdaza.jobsity.rectangles.utils;
+package com.frankdaza.nuvalence.rectangles.utils;
 
-import com.frankdaza.jobsity.rectangles.domain.Line;
-import com.frankdaza.jobsity.rectangles.domain.Point;
-import com.frankdaza.jobsity.rectangles.domain.Rectangle;
+import com.frankdaza.nuvalence.rectangles.domain.Line;
+import com.frankdaza.nuvalence.rectangles.domain.Point;
+import com.frankdaza.nuvalence.rectangles.domain.Rectangle;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

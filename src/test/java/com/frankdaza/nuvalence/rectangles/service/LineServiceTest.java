@@ -1,7 +1,7 @@
-package com.frankdaza.jobsity.rectangles.service;
+package com.frankdaza.nuvalence.rectangles.service;
 
-import com.frankdaza.jobsity.rectangles.domain.Line;
-import com.frankdaza.jobsity.rectangles.domain.Point;
+import com.frankdaza.nuvalence.rectangles.domain.Line;
+import com.frankdaza.nuvalence.rectangles.domain.Point;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

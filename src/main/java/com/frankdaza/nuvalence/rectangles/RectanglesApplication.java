@@ -1,5 +1,6 @@
-package com.frankdaza.jobsity.rectangles;
+package com.frankdaza.nuvalence.rectangles;
 
+import com.frankdaza.nuvalence.rectangles.jframe.RectanglesDrawing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RectanglesApplication {
 
     public static void main(String[] args) {
+        RectanglesDrawing rectanglesDrawing = new RectanglesDrawing();
         SpringApplication.run(RectanglesApplication.class, args);
     }
 

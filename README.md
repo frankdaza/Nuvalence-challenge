@@ -1,5 +1,20 @@
 # Rectangles
 
+# Install dependencies
+
+- Java 21 Amazon Corretto.
+- Gradle 8.5.
+
+# Run the project
+
+- This is a spring boot project, so you can run it as a spring boot application.
+- When the application is running, you should see a Jframe Panel with the rectangles, like this:
+
+![rectangles](src/main/resources/images/rectangles.png)
+
+- All the Rectangle logic is in the class `RectanglesService.java` in the package `com.rectangles.rectangles.services`.
+- You can run the tests with the command `./gradlew test` in the root of the project.
+
 ## Problem Description:
 
 You are required to write code in Java implementing certain algorithms that analyze rectangles and features that exist 
