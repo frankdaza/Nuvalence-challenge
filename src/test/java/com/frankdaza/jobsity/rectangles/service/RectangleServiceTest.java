@@ -76,4 +76,20 @@ public class RectangleServiceTest {
         Assertions.assertFalse(rectangleService.isContainment(rectangle1, rectangle2));
         Assertions.assertTrue(rectangleService.isInterception(rectangle1, rectangle2));
     }
+
+    @DisplayName("should create two rectangles and the adjacency with sub-line should be true - case 1")
+    @Test
+    public void adjacencyWithSubLineIsTrueCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(1, 7), new Point(5, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(5, 5), new Point(8, 3));
+        Assertions.assertTrue(rectangleService.isAdjacencySubLine(rectangle1, rectangle2));
+    }
+
+    @DisplayName("should create two rectangles and the adjacency with sub-line should not be true - case 1")
+    @Test
+    public void adjacencyWithSubLineIsFalseCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(1, 7), new Point(5, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(5, 7), new Point(8, 1));
+        Assertions.assertFalse(rectangleService.isAdjacencySubLine(rectangle2, rectangle1));
+    }
 }
