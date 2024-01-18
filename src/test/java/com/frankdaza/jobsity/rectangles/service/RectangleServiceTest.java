@@ -108,4 +108,12 @@ public class RectangleServiceTest {
         Rectangle rectangle2 = new Rectangle(new Point(4, 8), new Point(7, 4));
         Assertions.assertFalse(rectangleService.isAdjacencyProper(rectangle2, rectangle1));
     }
+
+    @DisplayName("should create two rectangles and the partial adjacency should be true - case 1")
+    @Test
+    public void partialAdjacencyIsTrueCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(-3, 4), new Point(4, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(2, 6), new Point(8, 4));
+        Assertions.assertTrue(rectangleService.isPartialAdjacency(rectangle1, rectangle2));
+    }
 }

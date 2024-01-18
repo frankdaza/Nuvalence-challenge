@@ -56,7 +56,7 @@ public class RectangleService implements IRectangleService {
         List<Line> rectangle1Lines = Utilities.getRectangleSideLines(rectangle1);
         List<Line> rectangle2Lines = Utilities.getRectangleSideLines(rectangle2);
 
-        // I'm assuming that the adjacency proper sub-line only could be one
+        // I'm assuming that the proper adjacency sub-line only could be one
         int adjacencyProperSubLineCounter = 0;
 
         for (Line rectangle1Line : rectangle1Lines) {
@@ -68,5 +68,24 @@ public class RectangleService implements IRectangleService {
         }
 
         return adjacencyProperSubLineCounter == 1;
+    }
+
+    @Override
+    public boolean isPartialAdjacency(Rectangle rectangle1, Rectangle rectangle2) {
+        List<Line> rectangle1Lines = Utilities.getRectangleSideLines(rectangle1);
+        List<Line> rectangle2Lines = Utilities.getRectangleSideLines(rectangle2);
+
+        // I'm assuming that the partial adjacency sub-line only could be one
+        int partialAdjacencySubLineCounter = 0;
+
+        for (Line rectangle1Line : rectangle1Lines) {
+            for (Line rectangle2Line : rectangle2Lines) {
+                if (lineService.isLine2PartialSubLineOfLine1(rectangle1Line, rectangle2Line)) {
+                    partialAdjacencySubLineCounter++;
+                }
+            }
+        }
+
+        return partialAdjacencySubLineCounter == 1;
     }
 }
