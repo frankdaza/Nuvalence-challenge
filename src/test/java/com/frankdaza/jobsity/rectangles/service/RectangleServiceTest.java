@@ -50,4 +50,30 @@ public class RectangleServiceTest {
         Rectangle rectangle2 = new Rectangle(new Point(-5, 5), new Point(-2, 2));
         Assertions.assertFalse(rectangleService.isInterception(rectangle1, rectangle2));
     }
+
+    @DisplayName("should create two rectangles and the containment should be true - case 1")
+    @Test
+    public void containmentIsTrueCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(1, 6), new Point(7, 2));
+        Rectangle rectangle2 = new Rectangle(new Point(2, 5), new Point(6, 3));
+        Assertions.assertTrue(rectangleService.isContainment(rectangle1, rectangle2));
+    }
+
+    @DisplayName("should create two rectangles and the containment should be false and the intersection should be false - case 1")
+    @Test
+    public void containmentIsFalseCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(-2, 5), new Point(2, 2));
+        Rectangle rectangle2 = new Rectangle(new Point(3, 4), new Point(8, 2));
+        Assertions.assertFalse(rectangleService.isContainment(rectangle1, rectangle2));
+        Assertions.assertFalse(rectangleService.isInterception(rectangle1, rectangle2));
+    }
+
+    @DisplayName("should create two rectangles the containment should be false and the intersection should be true - case 2")
+    @Test
+    public void containmentIsFalseCase2() {
+        Rectangle rectangle1 = new Rectangle(new Point(-2, 5), new Point(5, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(3, 4), new Point(9, 2));
+        Assertions.assertFalse(rectangleService.isContainment(rectangle1, rectangle2));
+        Assertions.assertTrue(rectangleService.isInterception(rectangle1, rectangle2));
+    }
 }
