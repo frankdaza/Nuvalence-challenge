@@ -1,5 +1,7 @@
 package com.frankdaza.jobsity.rectangles.domain;
 
+import java.util.Objects;
+
 public class Rectangle {
         private Point upperLeft;
         private Point lowerRight;
@@ -23,5 +25,18 @@ public class Rectangle {
 
         public void setLowerRight(Point lowerRight) {
                 this.lowerRight = lowerRight;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                Rectangle rectangle = (Rectangle) o;
+                return Objects.equals(upperLeft, rectangle.upperLeft) && Objects.equals(lowerRight, rectangle.lowerRight);
+        }
+
+        @Override
+        public int hashCode() {
+                return Objects.hash(upperLeft, lowerRight);
         }
 }

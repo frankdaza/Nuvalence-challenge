@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @DisplayName("Utilities Test")
 @SpringBootTest
@@ -57,5 +58,20 @@ public class UtilitiesTest {
         Line rectangleLeftLine = Utilities.getRectangleLeftLine(rectangle);
         Point pointBottomLeft = new Point(1, 1);
         Assertions.assertEquals(pointBottomLeft, rectangleLeftLine.getPoint2());
+    }
+
+    @DisplayName("should create a rectangle and get the side lines of a rectangle")
+    @Test
+    public void getRectangleSideLines() {
+        Rectangle rectangle = new Rectangle(new Point(1, 7), new Point(5, 1));
+        List<Line> rectangleSideLines = Utilities.getRectangleSideLines(rectangle);
+        Line rectangleTopLine = Utilities.getRectangleTopLine(rectangle);
+        Line rectangleRightLine = Utilities.getRectangleRightLine(rectangle);
+        Line rectangleBottomLine = Utilities.getRectangleBottomLine(rectangle);
+        Line rectangleLeftLine = Utilities.getRectangleLeftLine(rectangle);
+        Assertions.assertEquals(rectangleTopLine, rectangleSideLines.getFirst());
+        Assertions.assertEquals(rectangleRightLine, rectangleSideLines.get(1));
+        Assertions.assertEquals(rectangleBottomLine, rectangleSideLines.get(2));
+        Assertions.assertEquals(rectangleLeftLine, rectangleSideLines.getLast());
     }
 }

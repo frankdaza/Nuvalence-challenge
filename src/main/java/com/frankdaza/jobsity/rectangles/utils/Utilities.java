@@ -6,6 +6,7 @@ import com.frankdaza.jobsity.rectangles.domain.Rectangle;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 public class Utilities {
 
@@ -42,5 +43,13 @@ public class Utilities {
         Point pointTopLeft = rectangle.getUpperLeft();
         Point pointBottomLeft = new Point(rectangle.getUpperLeft().getX(), rectangle.getLowerRight().getY());
         return new Line(pointTopLeft, pointBottomLeft);
+    }
+
+    static public List<Line> getRectangleSideLines(Rectangle rectangle) {
+        Line rectangleTopLine = Utilities.getRectangleTopLine(rectangle);
+        Line rectangleRightLine = Utilities.getRectangleRightLine(rectangle);
+        Line rectangleBottomLine = Utilities.getRectangleBottomLine(rectangle);
+        Line rectangleLeftLine = Utilities.getRectangleLeftLine(rectangle);
+        return List.of(rectangleTopLine, rectangleRightLine, rectangleBottomLine, rectangleLeftLine);
     }
 }

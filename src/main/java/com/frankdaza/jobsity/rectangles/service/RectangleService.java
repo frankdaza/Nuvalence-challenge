@@ -34,17 +34,8 @@ public class RectangleService implements IRectangleService {
 
     @Override
     public boolean isAdjacencySubLine(Rectangle rectangle1, Rectangle rectangle2) {
-        Line rectangle1TopLine = Utilities.getRectangleTopLine(rectangle1);
-        Line rectangle1RightLine = Utilities.getRectangleRightLine(rectangle1);
-        Line rectangle1BottomLine = Utilities.getRectangleBottomLine(rectangle1);
-        Line rectangle1LeftLine = Utilities.getRectangleLeftLine(rectangle1);
-        List<Line> rectangle1Lines = List.of(rectangle1TopLine, rectangle1RightLine, rectangle1BottomLine, rectangle1LeftLine);
-
-        Line rectangle2TopLine = Utilities.getRectangleTopLine(rectangle2);
-        Line rectangle2RightLine = Utilities.getRectangleRightLine(rectangle2);
-        Line rectangle2BottomLine = Utilities.getRectangleBottomLine(rectangle2);
-        Line rectangle2LeftLine = Utilities.getRectangleLeftLine(rectangle2);
-        List<Line> rectangle2Lines = List.of(rectangle2TopLine, rectangle2RightLine, rectangle2BottomLine, rectangle2LeftLine);
+        List<Line> rectangle1Lines = Utilities.getRectangleSideLines(rectangle1);
+        List<Line> rectangle2Lines = Utilities.getRectangleSideLines(rectangle2);
 
         // I'm assuming that the adjacency sub-line only could be one
         int adjacencySubLineCounter = 0;
@@ -58,5 +49,24 @@ public class RectangleService implements IRectangleService {
         }
 
         return adjacencySubLineCounter == 1;
+    }
+
+    @Override
+    public boolean isAdjacencyProper(Rectangle rectangle1, Rectangle rectangle2) {
+        List<Line> rectangle1Lines = Utilities.getRectangleSideLines(rectangle1);
+        List<Line> rectangle2Lines = Utilities.getRectangleSideLines(rectangle2);
+
+        // I'm assuming that the adjacency proper sub-line only could be one
+        int adjacencyProperSubLineCounter = 0;
+
+        for (Line rectangle1Line : rectangle1Lines) {
+            for (Line rectangle2Line : rectangle2Lines) {
+                if (lineService.isLine1EqualsLine2(rectangle1Line, rectangle2Line)) {
+                    adjacencyProperSubLineCounter++;
+                }
+            }
+        }
+
+        return adjacencyProperSubLineCounter == 1;
     }
 }

@@ -92,4 +92,20 @@ public class RectangleServiceTest {
         Rectangle rectangle2 = new Rectangle(new Point(5, 7), new Point(8, 1));
         Assertions.assertFalse(rectangleService.isAdjacencySubLine(rectangle2, rectangle1));
     }
+
+    @DisplayName("should create two rectangles and the adjacency with proper sub-line should be true - case 1")
+    @Test
+    public void adjacencyWithProperSubLineIsTrueCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(1, 6), new Point(4, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(4, 6), new Point(6, 1));
+        Assertions.assertTrue(rectangleService.isAdjacencyProper(rectangle1, rectangle2));
+    }
+
+    @DisplayName("should create two rectangles and the adjacency with proper sub-line should not be true - case 1")
+    @Test
+    public void adjacencyWithProperSubLineIsFalseCase1() {
+        Rectangle rectangle1 = new Rectangle(new Point(1, 6), new Point(4, 1));
+        Rectangle rectangle2 = new Rectangle(new Point(4, 8), new Point(7, 4));
+        Assertions.assertFalse(rectangleService.isAdjacencyProper(rectangle2, rectangle1));
+    }
 }

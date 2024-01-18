@@ -27,4 +27,14 @@ public interface IRectangleService {
      * @return true if the rectangles are adjacent with one sub-line, false otherwise.
      */
     boolean isAdjacencySubLine(Rectangle rectangle1, Rectangle rectangle2);
+
+
+    /**
+     * Verify if two rectangles are adjacent with one proper sub-line.
+     * A proper sub-line is a sub-line with the same size of the other rectangle.
+     * @param rectangle1 Rectangle 1
+     * @param rectangle2 Rectangle 2
+     * @return true if the rectangles are adjacent with one proper sub-line, false otherwise.
+     */
+    boolean isAdjacencyProper(Rectangle rectangle1, Rectangle rectangle2);
 }
