@@ -88,4 +88,60 @@ public class LineServiceTest {
 
         Assertions.assertFalse(lineService.isLine2SubLineOfLine1(line1, line2));
     }
+
+    @DisplayName("should create two vertical lines lines and the line2 should be partial sub-line of line1 - case 1")
+    @Test
+    public void isLine2PartialSubLineOfLine1Case1() {
+        Point point1Line1 = new Point(5, 5);
+        Point point2Line1 = new Point(5, 1);
+        Line line1 = new Line(point1Line1, point2Line1);
+
+        Point point1Line2 = new Point(5, 7);
+        Point point2Line2 = new Point(5, 3);
+        Line line2 = new Line(point1Line2, point2Line2);
+
+        Assertions.assertTrue(lineService.isLine2PartialSubLineOfLine1(line1, line2));
+    }
+
+    @DisplayName("should create two horizontal lines lines and the line2 should be partial sub-line of line1 - case 2")
+    @Test
+    public void isLine2PartialSubLineOfLine1Case2() {
+        Point point1Line1 = new Point(1, 3);
+        Point point2Line1 = new Point(5, 3);
+        Line line1 = new Line(point1Line1, point2Line1);
+
+        Point point1Line2 = new Point(4, 3);
+        Point point2Line2 = new Point(8, 3);
+        Line line2 = new Line(point1Line2, point2Line2);
+
+        Assertions.assertTrue(lineService.isLine2PartialSubLineOfLine1(line1, line2));
+    }
+
+    @DisplayName("should create two vertical lines and the line2 should not be partial sub-line of line1 - case 1")
+    @Test
+    public void isLine2NotPartialSubLineOfLine1Case1() {
+        Point point1Line1 = new Point(3, 6);
+        Point point2Line1 = new Point(3, 1);
+        Line line1 = new Line(point1Line1, point2Line1);
+
+        Point point1Line2 = new Point(6, 6);
+        Point point2Line2 = new Point(6, 1);
+        Line line2 = new Line(point1Line2, point2Line2);
+
+        Assertions.assertFalse(lineService.isLine2PartialSubLineOfLine1(line1, line2));
+    }
+
+    @DisplayName("should create two horizontal lines and the line2 should not be partial sub-line of line1 - case 2")
+    @Test
+    public void isLine2NotPartialSubLineOfLine1Case2() {
+        Point point1Line1 = new Point(1, 3);
+        Point point2Line1 = new Point(7, 3);
+        Line line1 = new Line(point1Line1, point2Line1);
+
+        Point point1Line2 = new Point(1, 5);
+        Point point2Line2 = new Point(7, 5);
+        Line line2 = new Line(point1Line2, point2Line2);
+
+        Assertions.assertFalse(lineService.isLine2PartialSubLineOfLine1(line1, line2));
+    }
 }
